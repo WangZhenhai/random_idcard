@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Python version 2.7.13
+# Python version 3.0+
 
 
 # 十五位身份证号表达式
