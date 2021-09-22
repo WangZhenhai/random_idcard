@@ -14,8 +14,6 @@ a3 = ['立', '玲', '国', '', '伟', '刚', '勇', '毅', '俊', '峰', '强', 
 # 手机号前三位
 m1 = ['134', '135', '136', '137', '138', '139', '150', '151', '152', '157', '158', '159', '187', '188', '130', '131',
 	  '132', '155', '156', '185', '186', '133', '153', '180', '189']
-# 剩余手机号位数（随机取值）
-m2 = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 # 身份证号组成
 id1 = ['110101', '130626', '131122', '150524', '220622', '150925', '230707', '340223', '410404', '520425', '640202',
@@ -35,7 +33,6 @@ id7 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'X']
 
 # 银行信息
 bank = '622588'
-bank_num = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
 # 生成姓名
@@ -46,7 +43,7 @@ def random_name():
 
 # 生成手机号
 def random_mobile():
-    mobile = r.choice (m1) + r.choice (m2) + r.choice (m2) + r.choice (m2) + r.choice (m2) + r.choice (m2) + r.choice (m2) + r.choice (m2) + r.choice (m2)
+    mobile = r.choice (m1) + "".join(r.sample('1234567890',8))
     return mobile
 
 
@@ -57,7 +54,7 @@ def random_idcard():
 
 
 def random_bankNum():
-    bankNum = bank + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num) + r.choice (bank_num)
+    bankNum = bank + "".join(r.sample('1234567890',10))
     return bankNum
 
 
